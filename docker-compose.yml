@@ -1,0 +1,37 @@
+version: "3.3"
+services:
+  consul:
+    image: consul:1.6.0
+    command: ["consul","agent","-config-file=/config/consul-config.hcl","-config-dir=/config"]
+    volumes:
+      - "./consul_config:/config"
+    ports:
+      - 8500:8500
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.2
+  web:
+    build:
+      context: ./web-front-consul
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.3
+  api:
+    build:
+      context: ./web-backend-consul
+      dockerfile: Dockerfile
+    ports:
+      - 9090:9090
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.4
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+
