@@ -1,1 +1,0 @@
-{"Token":"","Service":{"ID":"web-front","Service":"web-front","Tags":["secure=false"],"Address":"35b2746e582c","Meta":null,"Port":8080,"Weights":{"Passing":1,"Warning":1},"EnableTagOverride":false,"Proxy":{"MeshGateway":{}},"Connect":{},"CreateIndex":0,"ModifyIndex":0}}
