@@ -1,3 +1,5 @@
-/consul_config/localdata/*
+/consul_data/localdata/*
 /web-backend-consul/target/*
 /web-front-consul/target/*
+/consul_config/web.json
+/consul_config/api.json

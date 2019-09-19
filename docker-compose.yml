@@ -5,6 +5,7 @@ services:
     command: ["consul","agent","-config-file=/config/consul-config.hcl","-config-dir=/config"]
     volumes:
       - "./consul_config:/config"
+      - "./consul_data:/data"
     ports:
       - 8500:8500
     networks:

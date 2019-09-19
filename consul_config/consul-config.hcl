@@ -1,4 +1,4 @@
-data_dir  = "/config/localdata"
+data_dir  = "/data/localdata"
 log_level = "DEBUG"
 
 datacenter = "dc1"
