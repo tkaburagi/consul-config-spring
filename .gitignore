@@ -3,3 +3,5 @@
 /web-front-consul/target/*
 /consul_config/web.json
 /consul_config/api.json
+/.idea/*
+web-backend-consul/.idea/*

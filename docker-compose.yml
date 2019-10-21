@@ -1,5 +1,6 @@
 version: "3.3"
 services:
+
   consul:
     image: consul:1.6.0
     command: ["consul","agent","-config-file=/config/consul-config.hcl","-config-dir=/config"]
@@ -11,24 +12,91 @@ services:
     networks:
       vpcbr:
         ipv4_address: 10.5.0.2
-  web:
-    build:
-      context: ./web-front-consul
-      dockerfile: Dockerfile
-    ports:
-      - 8080:8080
-    networks:
-      vpcbr:
-        ipv4_address: 10.5.0.3
-  api:
+        
+  app_1:
+    environment:
+      - APP_ID=APP_1
+      - APP_NUM=1
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
     ports:
-      - 9090:9090
+      - 1010:9090
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.4
+        ipv4_address: 10.5.0.11
+  app_2:
+    environment:
+      - APP_ID=APP_2
+      - APP_NUM=2
+    build:
+      context: ./web-backend-consul
+      dockerfile: Dockerfile
+    ports:
+      - 2020:9090
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.12
+  app_3:
+    environment:
+      - APP_ID=APP_3
+      - APP_NUM=3
+    build:
+      context: ./web-backend-consul
+      dockerfile: Dockerfile
+    ports:
+      - 3030:9090
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.13
+  app_4:
+    environment:
+      - APP_ID=APP_4
+      - APP_NUM=4
+    build:
+      context: ./web-backend-consul
+      dockerfile: Dockerfile
+    ports:
+      - 4040:9090
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.14
+  app_5:
+    environment:
+      - APP_ID=APP_5
+      - APP_NUM=5
+    build:
+      context: ./web-backend-consul
+      dockerfile: Dockerfile
+    ports:
+      - 5050:9090
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.15
+  app_6:
+    environment:
+      - APP_ID=APP_6
+      - APP_NUM=6
+    build:
+      context: ./web-backend-consul
+      dockerfile: Dockerfile
+    ports:
+      - 6060:9090
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.16
+  app_7:
+    environment:
+      - APP_ID=APP_7
+      - APP_NUM=7
+    build:
+      context: ./web-backend-consul
+      dockerfile: Dockerfile
+    ports:
+      - 7070:9090
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.17
 networks:
   vpcbr:
     driver: bridge
