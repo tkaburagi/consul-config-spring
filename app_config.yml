@@ -1,3 +1,4 @@
+#config/application/data
 management:
   endpoints:
     web:
@@ -6,3 +7,6 @@ management:
 logging:
   level:
     org.springframework.web: DEBUG
+
+app:
+  message: "HEY/HEY/HEY"

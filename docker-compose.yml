@@ -1,106 +1,113 @@
 version: "3.3"
 services:
 
-  consul:
-    image: consul:1.6.0
-    command: ["consul","agent","-config-file=/config/consul-config.hcl","-config-dir=/config"]
-    volumes:
-      - "./consul_config:/config"
-      - "./consul_data:/data"
-    ports:
-      - 8500:8500
-    networks:
-      vpcbr:
-        ipv4_address: 10.5.0.2
+  # consul:
+  #   image: consul:1.6.0
+  #   command: ["consul","agent","-config-file=/config/consul-config.hcl","-config-dir=/config"]
+  #   volumes:
+  #     - "./consul_config:/config"
+  #     - "./consul_data:/data"
+  #   ports:
+  #     - 8500:8500
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 10.5.0.2
         
   app_1:
     environment:
       - APP_ID=APP_1
       - APP_NUM=1
+      - PORT=1010
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
     ports:
       - 1010:9090
-    networks:
-      vpcbr:
-        ipv4_address: 10.5.0.11
+    # networks:
+    #   vpcbr:
+    #     ipv4_address: 10.5.0.11
   app_2:
     environment:
       - APP_ID=APP_2
       - APP_NUM=2
+      - PORT=2020
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
     ports:
       - 2020:9090
-    networks:
-      vpcbr:
-        ipv4_address: 10.5.0.12
+    # networks:
+    #   vpcbr:
+    #     ipv4_address: 10.5.0.12
   app_3:
     environment:
       - APP_ID=APP_3
       - APP_NUM=3
+      - PORT=3030
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
     ports:
       - 3030:9090
-    networks:
-      vpcbr:
-        ipv4_address: 10.5.0.13
+    # networks:
+    #   vpcbr:
+    #     ipv4_address: 10.5.0.13
   app_4:
     environment:
       - APP_ID=APP_4
       - APP_NUM=4
+      - PORT=4040
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
     ports:
       - 4040:9090
-    networks:
-      vpcbr:
-        ipv4_address: 10.5.0.14
+    # networks:
+    #   vpcbr:
+    #     ipv4_address: 10.5.0.14
   app_5:
     environment:
       - APP_ID=APP_5
       - APP_NUM=5
+      - PORT=5050
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
     ports:
       - 5050:9090
-    networks:
-      vpcbr:
-        ipv4_address: 10.5.0.15
+    # networks:
+    #   vpcbr:
+    #     ipv4_address: 10.5.0.15
   app_6:
     environment:
       - APP_ID=APP_6
       - APP_NUM=6
+      - PORT=6060
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
     ports:
       - 6060:9090
-    networks:
-      vpcbr:
-        ipv4_address: 10.5.0.16
+    # networks:
+    #   vpcbr:
+    #     ipv4_address: 10.5.0.16
   app_7:
     environment:
       - APP_ID=APP_7
       - APP_NUM=7
+      - PORT=7070
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
     ports:
       - 7070:9090
-    networks:
-      vpcbr:
-        ipv4_address: 10.5.0.17
-networks:
-  vpcbr:
-    driver: bridge
-    ipam:
-     config:
-       - subnet: 10.5.0.0/16
+    # networks:
+    #   vpcbr:
+    #     ipv4_address: 10.5.0.17
+# networks:
+#   vpcbr:
+#     driver: bridge
+#     ipam:
+#      config:
+#        - subnet: 10.5.0.0/16
 
