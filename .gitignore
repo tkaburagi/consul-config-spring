@@ -5,5 +5,4 @@
 /consul_config/api.json
 /.idea/*
 web-backend-consul/.idea/*
-run.sh
-/consul_config/*
+/consul_config/consul-config.hcl
