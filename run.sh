@@ -10,8 +10,8 @@ docker-compose build --no-cache
 
 consul agent -server -bind=0.0.0.0 \
 -client=0.0.0.0 \
--data-dir=/Users/kabu/hashicorp/consul/config-demo-data \
+-data-dir=${DATA_DIR} \
 -bootstrap-expect=1 -ui \
--config-dir=/Users/kabu/hashicorp/intellij/springboot-consul-config/consul_config/consul-config.hcl &
+-config-dir=${CONFIG_DIR}/consul-config.hcl &
 
 docker-compose up
