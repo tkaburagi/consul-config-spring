@@ -1,3 +1,5 @@
+datacenter = "dc1"
+
 server = true
 
 bootstrap_expect = 1
