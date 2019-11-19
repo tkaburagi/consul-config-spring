@@ -5,5 +5,5 @@
 /consul_config/api.json
 /.idea/*
 web-backend-consul/.idea/*
-consul_config/
+/consul_config/*
 run.sh
