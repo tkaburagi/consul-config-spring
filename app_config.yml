@@ -9,4 +9,4 @@ logging:
     org.springframework.web: DEBUG
 
 app:
-  message: "HEY/HEY/HEY"
+  message: "HEY HEY HEY"
