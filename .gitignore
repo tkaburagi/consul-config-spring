@@ -6,3 +6,4 @@
 /.idea/*
 web-backend-consul/.idea/*
 /consul_config/consul-config.hcl
+run.sh
