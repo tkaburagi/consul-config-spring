@@ -15,3 +15,13 @@ connect {
 }
 
 enable_central_service_config = true
+
+"watches" = {
+  "args" = ["/Users/kabu/hashicorp/intellij/springboot-consul-config/updateconfig.sh"]
+
+  "handler_type" = "script"
+
+  "key" = "config/application/data"
+
+  "type" = "key"
+}
