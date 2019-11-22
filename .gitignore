@@ -6,4 +6,5 @@
 /.idea/*
 web-backend-consul/.idea/*
 /consul_config/*
-run.sh
+run-demo.sh
+updateconfig-demo.sh

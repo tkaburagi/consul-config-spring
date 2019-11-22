@@ -1,12 +1,12 @@
 #!/bin/sh
 
-A=$(docker ps | grep springboot-consul-config_app | sed -n 1p | cut -d " " -f 1)
-B=$(docker ps | grep springboot-consul-config_app | sed -n 2p | cut -d " " -f 1)
-C=$(docker ps | grep springboot-consul-config_app | sed -n 3p | cut -d " " -f 1)
-D=$(docker ps | grep springboot-consul-config_app | sed -n 4p | cut -d " " -f 1)
-E=$(docker ps | grep springboot-consul-config_app | sed -n 5p | cut -d " " -f 1)
-F=$(docker ps | grep springboot-consul-config_app | sed -n 6p | cut -d " " -f 1)
-G=$(docker ps | grep springboot-consul-config_app | sed -n 7p | cut -d " " -f 1)
+A=$(docker ps | grep consul-config-spring_app | sed -n 1p | cut -d " " -f 1)
+B=$(docker ps | grep consul-config-spring_app | sed -n 2p | cut -d " " -f 1)
+C=$(docker ps | grep consul-config-spring_app | sed -n 3p | cut -d " " -f 1)
+D=$(docker ps | grep consul-config-spring_app | sed -n 4p | cut -d " " -f 1)
+E=$(docker ps | grep consul-config-spring_app | sed -n 5p | cut -d " " -f 1)
+F=$(docker ps | grep consul-config-spring_app | sed -n 6p | cut -d " " -f 1)
+G=$(docker ps | grep consul-config-spring_app | sed -n 7p | cut -d " " -f 1)
 
 echo $A
 echo $B
