@@ -1,10 +1,8 @@
 /consul_data/localdata/*
 /web-backend-consul/target/*
 /web-front-consul/target/*
-/consul_config/web.json
-/consul_config/api.json
 /.idea/*
 web-backend-consul/.idea/*
-/consul_config/*
+/consul.d/consul-config.hcl
 run-demo.sh
 updateconfig-demo.sh

@@ -1,0 +1,8 @@
+{
+  "service": {
+    "name": "app",
+    "id": "app-4",
+    "address": "10.5.0.6",
+    "port": 8080,
+  }
+}
