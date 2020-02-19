@@ -1,17 +1,5 @@
 version: "3.3"
 services:
-  consul:
-    image: consul:1.6.0
-    command: ["consul","agent","-config-file=/config/consul-config.hcl","-config-dir=/config"]
-    volumes:
-      - "./consul.d:/config"
-      - "./consul_data:/data"
-    ports:
-      - 8500:8500
-    networks:
-      vpcbr:
-        ipv4_address: 10.5.0.2 
-
   app_1:
     environment:
       - APP_ID=APP_1
@@ -103,6 +91,12 @@ services:
         ipv4_address: 10.5.0.9
     ports:
       - 7070:9090
+  docker-host:
+    image: qoomon/docker-host
+    cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
+    restart: on-failure
+    environment:
+      - PORTS=8500
 
 networks:
   vpcbr:
