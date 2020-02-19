@@ -1,6 +1,17 @@
 version: "3.3"
 services:
-        
+  consul:
+    image: consul:1.6.0
+    command: ["consul","agent","-config-file=/config/consul-config.hcl","-config-dir=/config"]
+    volumes:
+      - "./consul.d:/config"
+      - "./consul_data:/data"
+    ports:
+      - 8500:8500
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.2 
+
   app_1:
     environment:
       - APP_ID=APP_1
@@ -9,6 +20,9 @@ services:
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.3
     ports:
       - 1010:9090
   app_2:
@@ -19,9 +33,11 @@ services:
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.4
     ports:
       - 2020:9090
-
   app_3:
     environment:
       - APP_ID=APP_3
@@ -30,9 +46,11 @@ services:
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.5
     ports:
       - 3030:9090
-
   app_4:
     environment:
       - APP_ID=APP_4
@@ -41,9 +59,11 @@ services:
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.6
     ports:
       - 4040:9090
-
   app_5:
     environment:
       - APP_ID=APP_5
@@ -52,9 +72,11 @@ services:
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.7
     ports:
       - 5050:9090
-
   app_6:
     environment:
       - APP_ID=APP_6
@@ -63,9 +85,11 @@ services:
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.8
     ports:
       - 6060:9090
-
   app_7:
     environment:
       - APP_ID=APP_7
@@ -74,5 +98,8 @@ services:
     build:
       context: ./web-backend-consul
       dockerfile: Dockerfile
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.9
     ports:
       - 7070:9090
