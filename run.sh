@@ -1,5 +1,7 @@
 #!/bin/sh
 
+pkill consul
+
 cd web-backend-consul 
 
 ./mvnw clean package -DskipTests
