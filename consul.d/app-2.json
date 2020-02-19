@@ -3,6 +3,6 @@
     "name": "app",
     "id": "app-2",
     "address": "10.5.0.4",
-    "port": 8080,
+    "port": 8080
   }
 }
