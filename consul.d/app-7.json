@@ -1,6 +1,6 @@
 {
   "service": {
-    "name": "app",
+    "name": "app-7",
     "id": "app-7",
     "address": "10.5.0.9",
     "port": 8080
